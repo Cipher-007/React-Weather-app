@@ -1,11 +1,13 @@
 .weather {
   margin-top: 129px;
-    border: 1px solid grey;
-    border-radius: 20px;
+    border: 8px solid grey;
+    border-radius: 78px;
     padding-bottom: 30px;
     width: max-content;
     padding: 38px 10px 279px 23px;
     margin-left: 30%;
+    /* height: 312px; */
+    /* width: 40%; */
     background: rgb(18 168 223 / 26%);
 }
 .weather .title {

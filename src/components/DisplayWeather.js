@@ -2,20 +2,20 @@ import React from "react";
 import "./displayweather.css";
 function DisplayWeather(props) {
   const { data } = props;
-  console.log(data)
+  // console.log(data)
   const iconurl =
     "http://openweathermap.org/img/wn/" +
-    `${data.cod != 404 ? data.weather[0].icon : null}` +
+    `${data.cod !== 404 ? data.weather[0].icon : null}` +
     ".png";
   return (
-    <div className="displayweather">
-      {data.cod != 404 ? (
+    <div className='displayweather'>
+      {data.cod !== 404 ? (
         <React.Fragment>
-          <div className="maincard">
-            <span className="cardtitle">
+          <div className='maincard'>
+            <span className='cardtitle'>
               {data.name} , {data.sys.country}. Weather
             </span>
-            <span className="cardsubtitle">
+            <span className='cardsubtitle'>
               {new Date().toLocaleTimeString()}
             </span>
 
@@ -24,15 +24,15 @@ function DisplayWeather(props) {
               {Math.floor(data.main.temp - 273.15)}
               <sup>o</sup>
             </h1>
-            <span className="weather-main">{data.weather[0].main}</span>
-            <img className="weather-icon" src={iconurl} alt="" srcset="" />
-            <span className="weather-description">
+            <span className='weather-main'>{data.weather[0].main}</span>
+            <img className='weather-icon' src={iconurl} alt='' srcset='' />
+            <span className='weather-description'>
               {" "}
               {data.weather[0].description}
             </span>
           </div>
-          <div className="weatherdetails">
-            <div className="section1">
+          <div className='weatherdetails'>
+            <div className='section1'>
               <table>
                 <tr>
                   <td>
@@ -72,7 +72,7 @@ function DisplayWeather(props) {
               </table>
             </div>
 
-            <div className="section2">
+            <div className='section2'>
               <table>
                 <tr>
                   <td>
@@ -118,7 +118,7 @@ function DisplayWeather(props) {
           </div>
         </React.Fragment>
       ) : (
-        <div className="maincard">
+        <div className='maincard'>
           <h2>{data.message}</h2>
         </div>
       )}
